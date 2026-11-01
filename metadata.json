@@ -1,0 +1,6 @@
+{
+  "name": "WorkOrbit",
+  "description": "A modern full-stack project and team collaboration platform with Linear-level speed and dark aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

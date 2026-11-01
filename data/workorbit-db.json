@@ -1,0 +1,474 @@
+{
+  "users": [
+    {
+      "id": "usr_alex",
+      "name": "Yash",
+      "email": "alex@workorbit.io",
+      "passwordHash": "a5af5c621812526f2c97be1482b750ef8b8c048e5b34c40272f7e2528da07dab",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "jobTitle": "VP of Product & Engineering",
+      "createdAt": "2026-09-28T17:16:54.538Z"
+    },
+    {
+      "id": "usr_elena",
+      "name": "Elena Rostova",
+      "email": "elena@workorbit.io",
+      "passwordHash": "a5af5c621812526f2c97be1482b750ef8b8c048e5b34c40272f7e2528da07dab",
+      "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "jobTitle": "Lead System Architect",
+      "createdAt": "2026-10-03T17:16:54.539Z"
+    },
+    {
+      "id": "usr_jordan",
+      "name": "Jordan Chen",
+      "email": "jordan@workorbit.io",
+      "passwordHash": "a5af5c621812526f2c97be1482b750ef8b8c048e5b34c40272f7e2528da07dab",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "jobTitle": "Senior Frontend Engineer",
+      "createdAt": "2026-10-08T17:16:54.539Z"
+    },
+    {
+      "id": "usr_sarah",
+      "name": "Sarah Connor",
+      "email": "sarah@workorbit.io",
+      "passwordHash": "a5af5c621812526f2c97be1482b750ef8b8c048e5b34c40272f7e2528da07dab",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "jobTitle": "DevOps & Reliability Engineer",
+      "createdAt": "2026-10-13T17:16:54.539Z"
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "ws_quantum",
+      "name": "Quantum Systems",
+      "slug": "quantum-systems",
+      "description": "Core infrastructure, real-time sync engine, and developer platform.",
+      "avatar": "⚡",
+      "ownerId": "usr_alex",
+      "members": [
+        {
+          "userId": "usr_alex",
+          "role": "Owner",
+          "joinedAt": "2026-09-28T17:16:54.539Z"
+        },
+        {
+          "userId": "usr_elena",
+          "role": "Admin",
+          "joinedAt": "2026-10-03T17:16:54.539Z"
+        },
+        {
+          "userId": "usr_jordan",
+          "role": "Member",
+          "joinedAt": "2026-10-08T17:16:54.539Z"
+        },
+        {
+          "userId": "usr_sarah",
+          "role": "Member",
+          "joinedAt": "2026-10-13T17:16:54.539Z"
+        }
+      ],
+      "createdAt": "2026-09-28T17:16:54.539Z",
+      "updatedAt": "2026-10-26T17:16:54.539Z"
+    },
+    {
+      "id": "ws_orbit_labs",
+      "name": "Orbit Labs & Ventures",
+      "slug": "orbit-labs",
+      "description": "Next-generation AI features, experimental prototypes, and customer labs.",
+      "avatar": "🪐",
+      "ownerId": "usr_alex",
+      "members": [
+        {
+          "userId": "usr_alex",
+          "role": "Owner",
+          "joinedAt": "2026-10-13T17:16:54.539Z"
+        },
+        {
+          "userId": "usr_elena",
+          "role": "Admin",
+          "joinedAt": "2026-10-14T17:16:54.539Z"
+        }
+      ],
+      "createdAt": "2026-10-13T17:16:54.539Z",
+      "updatedAt": "2026-10-23T17:16:54.539Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_telemetry",
+      "workspaceId": "ws_quantum",
+      "name": "Real-time Telemetry Pipeline",
+      "description": "Distributed event bus and WebSocket streaming for sub-50ms observability.",
+      "status": "Active",
+      "priority": "Urgent",
+      "ownerId": "usr_elena",
+      "memberIds": [
+        "usr_alex",
+        "usr_elena",
+        "usr_sarah"
+      ],
+      "startDate": "2026-10-18",
+      "dueDate": "2026-11-09",
+      "color": "#4F8CFF",
+      "createdAt": "2026-10-16T17:16:54.539Z",
+      "updatedAt": "2026-10-27T17:16:54.539Z"
+    },
+    {
+      "id": "prj_auth",
+      "workspaceId": "ws_quantum",
+      "name": "Auth 2.0 & Role Permissions",
+      "description": "Fine-grained RBAC matrix, token rotation, and multi-tenant isolation.",
+      "status": "Completed",
+      "priority": "High",
+      "ownerId": "usr_alex",
+      "memberIds": [
+        "usr_alex",
+        "usr_elena"
+      ],
+      "startDate": "2026-10-03",
+      "dueDate": "2026-10-26",
+      "color": "#8B5CF6",
+      "createdAt": "2026-10-03T17:16:54.539Z",
+      "updatedAt": "2026-10-26T17:16:54.539Z"
+    },
+    {
+      "id": "prj_mobile",
+      "workspaceId": "ws_quantum",
+      "name": "Mobile PWA & Offline Cache",
+      "description": "Service worker cache management and optimistic offline mutation queuing.",
+      "status": "Active",
+      "priority": "Medium",
+      "ownerId": "usr_jordan",
+      "memberIds": [
+        "usr_jordan",
+        "usr_alex"
+      ],
+      "startDate": "2026-10-23",
+      "dueDate": "2026-11-17",
+      "color": "#34D399",
+      "createdAt": "2026-10-22T17:16:54.539Z",
+      "updatedAt": "2026-10-27T17:16:54.539Z"
+    },
+    {
+      "id": "prj_billing",
+      "workspaceId": "ws_quantum",
+      "name": "Enterprise Tier & Invoicing",
+      "description": "Automated usage meters, seat provisioning, and multi-currency billing.",
+      "status": "Planning",
+      "priority": "Low",
+      "ownerId": "usr_alex",
+      "memberIds": [
+        "usr_alex"
+      ],
+      "startDate": "2026-11-02",
+      "dueDate": "2026-12-07",
+      "color": "#FBBF24",
+      "createdAt": "2026-10-24T17:16:54.539Z",
+      "updatedAt": "2026-10-24T17:16:54.539Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "tsk_101",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_telemetry",
+      "title": "Benchmark Kafka throughput vs Redis stream partitioner",
+      "description": "Run load simulation with 50,000 synthetic metrics/sec across 4 regional nodes.",
+      "status": "Done",
+      "priority": "High",
+      "assigneeId": "usr_sarah",
+      "creatorId": "usr_elena",
+      "dueDate": "2026-10-27",
+      "tags": [
+        "backend",
+        "infra",
+        "performance"
+      ],
+      "comments": [
+        {
+          "id": "cmt_1",
+          "taskId": "tsk_101",
+          "authorId": "usr_sarah",
+          "authorName": "Sarah Connor",
+          "authorAvatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+          "content": "Benchmark completed! Redis streams sustained 82k ops/sec with <8ms p99 latency.",
+          "createdAt": "2026-10-27T17:16:54.539Z"
+        }
+      ],
+      "createdAt": "2026-10-20T17:16:54.539Z",
+      "updatedAt": "2026-10-27T17:16:54.539Z"
+    },
+    {
+      "id": "tsk_102",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_telemetry",
+      "title": "Implement backpressure and drop strategies in WebSocket gateway",
+      "description": "When consumer queue exceeds 500 messages, throttle producer and alert SRE.",
+      "status": "In Progress",
+      "priority": "Urgent",
+      "assigneeId": "usr_elena",
+      "creatorId": "usr_alex",
+      "dueDate": "2026-10-30",
+      "tags": [
+        "infra",
+        "gateway"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-24T17:16:54.539Z",
+      "updatedAt": "2026-10-28T17:16:54.539Z"
+    },
+    {
+      "id": "tsk_103",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_telemetry",
+      "title": "Prometheus metrics exporter for ingress edge nodes",
+      "description": "Expose /metrics endpoint with rate, errors, and duration buckets.",
+      "status": "In Review",
+      "priority": "Medium",
+      "assigneeId": "usr_sarah",
+      "creatorId": "usr_elena",
+      "dueDate": "2026-10-31",
+      "tags": [
+        "observability",
+        "devops"
+      ],
+      "comments": [
+        {
+          "id": "cmt_2",
+          "taskId": "tsk_103",
+          "authorId": "usr_elena",
+          "authorName": "Elena Rostova",
+          "authorAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+          "content": "PR is open. Please verify histogram bucket distribution for TLS handshake metrics.",
+          "createdAt": "2026-10-28T11:16:54.539Z"
+        }
+      ],
+      "createdAt": "2026-10-23T17:16:54.539Z",
+      "updatedAt": "2026-10-28T17:16:54.539Z"
+    },
+    {
+      "id": "tsk_104",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_telemetry",
+      "title": "Automated failover fail-test in staging cluster",
+      "description": "Simulate zone outage in us-east-1 and measure reconnection time.",
+      "status": "To Do",
+      "priority": "High",
+      "assigneeId": "usr_sarah",
+      "creatorId": "usr_elena",
+      "dueDate": "2026-11-03",
+      "tags": [
+        "sre",
+        "chaos"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-25T17:16:54.540Z",
+      "updatedAt": "2026-10-28T17:16:54.540Z"
+    },
+    {
+      "id": "tsk_105",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_auth",
+      "title": "Role-based access matrix definition & middleware audit",
+      "description": "Ensure Owner/Admin/Member hierarchy is enforced strictly across all REST endpoints.",
+      "status": "Done",
+      "priority": "Urgent",
+      "assigneeId": "usr_alex",
+      "creatorId": "usr_alex",
+      "dueDate": "2026-10-25",
+      "tags": [
+        "security",
+        "compliance"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-08T17:16:54.540Z",
+      "updatedAt": "2026-10-25T17:16:54.540Z"
+    },
+    {
+      "id": "tsk_106",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_auth",
+      "title": "Single-use cryptographic invitation tokens with TTL",
+      "description": "Tokens must be salted, hashed, and expired after 7 days or upon first redemption.",
+      "status": "Done",
+      "priority": "High",
+      "assigneeId": "usr_elena",
+      "creatorId": "usr_alex",
+      "dueDate": "2026-10-26",
+      "tags": [
+        "security",
+        "invitations"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-10T17:16:54.540Z",
+      "updatedAt": "2026-10-26T17:16:54.540Z"
+    },
+    {
+      "id": "tsk_107",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_mobile",
+      "title": "IndexedDB schema for offline task drafts",
+      "description": "Allow team members to create tasks on trains/flights and sync smoothly upon reconnection.",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assigneeId": "usr_jordan",
+      "creatorId": "usr_jordan",
+      "dueDate": "2026-11-01",
+      "tags": [
+        "frontend",
+        "pwa",
+        "storage"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-24T17:16:54.540Z",
+      "updatedAt": "2026-10-28T17:16:54.540Z"
+    },
+    {
+      "id": "tsk_108",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_mobile",
+      "title": "Touch gestures & haptic feedback for Kanban drag",
+      "description": "Optimize pointer events so dragging cards on mobile tablets feels native and snappy.",
+      "status": "To Do",
+      "priority": "Medium",
+      "assigneeId": "usr_jordan",
+      "creatorId": "usr_alex",
+      "dueDate": "2026-11-06",
+      "tags": [
+        "ux",
+        "mobile"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-25T17:16:54.540Z",
+      "updatedAt": "2026-10-28T17:16:54.540Z"
+    },
+    {
+      "id": "tsk_109",
+      "workspaceId": "ws_quantum",
+      "projectId": "prj_billing",
+      "title": "Stripe webhook receiver with idempotency keys",
+      "description": "Handle customer.subscription.updated and invoice.payment_succeeded events.",
+      "status": "To Do",
+      "priority": "Low",
+      "assigneeId": "usr_alex",
+      "creatorId": "usr_alex",
+      "dueDate": "2026-11-12",
+      "tags": [
+        "billing",
+        "api"
+      ],
+      "comments": [],
+      "createdAt": "2026-10-26T17:16:54.540Z",
+      "updatedAt": "2026-10-28T17:16:54.540Z"
+    }
+  ],
+  "invitations": [
+    {
+      "id": "inv_1",
+      "workspaceId": "ws_quantum",
+      "workspaceName": "Quantum Systems",
+      "email": "devin@acmecorp.dev",
+      "role": "Member",
+      "token": "tok_demo_devin_789456",
+      "status": "Pending",
+      "invitedBy": "usr_alex",
+      "invitedByName": "Alex Mercer",
+      "expiresAt": "2026-11-04T17:16:54.540Z",
+      "createdAt": "2026-10-27T17:16:54.540Z"
+    },
+    {
+      "id": "inv_2",
+      "workspaceId": "ws_quantum",
+      "workspaceName": "Quantum Systems",
+      "email": "maya@designlabs.co",
+      "role": "Admin",
+      "token": "tok_demo_maya_123456",
+      "status": "Pending",
+      "invitedBy": "usr_alex",
+      "invitedByName": "Alex Mercer",
+      "expiresAt": "2026-11-03T17:16:54.540Z",
+      "createdAt": "2026-10-26T17:16:54.540Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act_1",
+      "workspaceId": "ws_quantum",
+      "userId": "usr_sarah",
+      "userName": "Sarah Connor",
+      "userAvatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "action": "completed task",
+      "entityType": "task",
+      "entityName": "Benchmark Kafka throughput vs Redis stream partitioner",
+      "timestamp": "2026-10-27T17:16:54.540Z"
+    },
+    {
+      "id": "act_2",
+      "workspaceId": "ws_quantum",
+      "userId": "usr_elena",
+      "userName": "Elena Rostova",
+      "userAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "action": "commented on task",
+      "entityType": "task",
+      "entityName": "Prometheus metrics exporter for ingress edge nodes",
+      "timestamp": "2026-10-28T11:16:54.540Z"
+    },
+    {
+      "id": "act_3",
+      "workspaceId": "ws_quantum",
+      "userId": "usr_alex",
+      "userName": "Alex Mercer",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "action": "invited member",
+      "entityType": "invitation",
+      "entityName": "devin@acmecorp.dev",
+      "timestamp": "2026-10-27T17:16:54.540Z"
+    },
+    {
+      "id": "act_4",
+      "workspaceId": "ws_quantum",
+      "userId": "usr_jordan",
+      "userName": "Jordan Chen",
+      "userAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "action": "started working on",
+      "entityType": "task",
+      "entityName": "IndexedDB schema for offline task drafts",
+      "timestamp": "2026-10-27T05:16:54.540Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "userId": "usr_alex",
+      "workspaceId": "ws_quantum",
+      "title": "Task in Review",
+      "message": "Sarah submitted Prometheus metrics exporter for code review.",
+      "read": false,
+      "type": "status_change",
+      "link": "/tasks",
+      "createdAt": "2026-10-28T15:16:54.540Z"
+    },
+    {
+      "id": "notif_2",
+      "userId": "usr_alex",
+      "workspaceId": "ws_quantum",
+      "title": "New Comment",
+      "message": "Elena commented on Prometheus metrics exporter.",
+      "read": false,
+      "type": "comment",
+      "link": "/tasks",
+      "createdAt": "2026-10-28T11:16:54.540Z"
+    },
+    {
+      "id": "notif_3",
+      "userId": "usr_alex",
+      "workspaceId": "ws_quantum",
+      "title": "Invitation Sent",
+      "message": "Invitation generated for devin@acmecorp.dev (Member)",
+      "read": true,
+      "type": "invitation",
+      "createdAt": "2026-10-27T17:16:54.540Z"
+    }
+  ],
+  "passwordResetTokens": []
+}

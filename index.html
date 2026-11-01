@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _currentFetch = window.fetch;
+          var descriptor = {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(fn) {
+              _currentFetch = fn;
+            }
+          };
+          try {
+            Object.defineProperty(window, 'fetch', descriptor);
+          } catch (_) {}
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              Object.defineProperty(Window.prototype, 'fetch', descriptor);
+            }
+          } catch (_) {}
+        } catch (_) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkOrbit — Modern Full-Stack Project & Team Collaboration</title>
+    <meta name="description" content="A modern full-stack project and team collaboration platform with Linear-level speed and dark aesthetics." />
+    <meta property="og:title" content="WorkOrbit — Modern Full-Stack Project & Team Collaboration" />
+    <meta property="og:description" content="A modern full-stack project and team collaboration platform with Linear-level speed and dark aesthetics." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0B0F19] text-[#F3F6FC] antialiased selection:bg-[#4F8CFF]/30 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
