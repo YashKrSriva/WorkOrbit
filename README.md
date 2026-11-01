@@ -328,7 +328,7 @@ The project focuses on building a practical collaboration platform with workspac
 
 **Yash Kumar Srivastava**
 
-BCA (IBM) Student | Aspiring App Developer
+BCA (IBM) Student | Aspiring AI/ML Developer
 
 - GitHub: https://github.com/YashKrSriva
 - LinkedIn: https://www.linkedin.com/in/yash-kumar-srivastava-b77897311
