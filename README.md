@@ -1,101 +1,342 @@
-# WorkOrbit — Modern Full-Stack Project & Team Collaboration Platform
+# WorkOrbit — Project & Team Collaboration Platform
 
-WorkOrbit is a modern, high-performance SaaS collaboration platform combining the velocity of Linear, the organizational depth of Asana, and a clean dark theme.
+WorkOrbit is a modern full-stack project and team collaboration platform designed to help teams organize workspaces, manage projects, track tasks, and collaborate efficiently.
 
----
+It combines a clean dark interface with project management workflows inspired by modern productivity platforms.
 
-## 🚀 Live Interactive Applet & Technology Architecture
-
-WorkOrbit supports dual execution targets:
-1. **Live Full-Stack Web Platform (Node.js/Express + React 19 + TypeScript + Tailwind CSS)**:
-   - Runs live on port 3000 in AI Studio with real HTTP REST APIs (`/api/auth/*`, `/api/workspaces/*`, `/api/projects/*`, `/api/tasks/*`, `/api/invitations/*`, `/api/dashboard/*`).
-   - Disk-persisted storage (`/data/workorbit-db.json`) preserving all workspaces, sprint boards, and team members across reloads.
-2. **Production Python Backend (FastAPI + SQLAlchemy + Alembic + Pydantic + Pytest)**:
-   - Located in the `/app` directory with normalized relational models, Alembic migrations, and JWT bearer authentication.
+> **Project Status:** Active Development
 
 ---
 
-## 🛠️ Windows PowerShell Local Development Setup
+## 🚀 Key Features
 
-Follow these exact steps to run the Python FastAPI backend with your virtual environment located at `D:\Interstellar\WorkOrbitVenv`:
+- **Workspace Management:** Create and manage multiple workspaces.
+- **Project Management:** Organize projects within workspaces.
+- **Task Management:** Create, assign, and track tasks.
+- **Kanban Boards:** Manage tasks through different workflow statuses.
+- **Team Collaboration:** Invite and manage team members.
+- **Role-Based Access Control (RBAC):** Different permissions for Owners, Admins, and Members.
+- **Invitation Management:** Invite team members through email or links.
+- **Dashboard Analytics:** Monitor project progress and task completion.
+- **Authentication:** JWT-based authentication in the Python backend.
+- **Persistent Storage:** JSON-based disk persistence in the live AI Studio application.
 
-### 1. Initialize & Activate the Virtual Environment
-Open **Windows PowerShell** as Administrator or standard user:
+---
 
-```powershell
-# Navigate to the project directory
-cd D:\Interstellar\WorkOrbit
+## 🛠️ Technology Stack
 
-# Create virtual environment if not already created
-python -m venv D:\Interstellar\WorkOrbitVenv
+### Frontend
+- React 19
+- TypeScript
+- Tailwind CSS
 
-# Set PowerShell execution policy for this session (if required)
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+### Backend — Live Application
+- Node.js
+- Express.js
+- REST APIs
 
-# Activate the virtual environment
-D:\Interstellar\WorkOrbitVenv\Scripts\Activate.ps1
+### Backend — Python Implementation
+- Python
+- FastAPI
+- SQLAlchemy
+- Alembic
+- Pydantic
+- Uvicorn
+
+### Database & Testing
+- Relational Database (Python backend configuration)
+- JSON-based persistent storage (Live application)
+- Pytest
+
+---
+
+## 🏗️ System Architecture
+
+WorkOrbit currently supports two execution targets.
+
+### 1. Live Full-Stack Web Application
+
+The live application runs in the AI Studio environment on port `3000`.
+
+**Technology:**
+- React 19
+- TypeScript
+- Tailwind CSS
+- Node.js / Express
+
+**API Route Groups:**
+
+| API Endpoint | Function |
+|---|---|
+| `/api/auth/*` | Authentication |
+| `/api/workspaces/*` | Workspace Management |
+| `/api/projects/*` | Project Management |
+| `/api/tasks/*` | Task Management |
+| `/api/invitations/*` | Team Invitations |
+| `/api/dashboard/*` | Dashboard Data |
+
+Data is persisted using JSON storage at:
+
+`/data/workorbit-db.json`
+
+### 2. Python Backend Implementation
+
+A separate backend implementation is available in the `/app` directory.
+
+**Technology:**
+- FastAPI
+- SQLAlchemy
+- Alembic
+- Pydantic
+- JWT Authentication
+- Pytest
+
+The backend uses relational models, database migrations, and authentication mechanisms.
+
+> Note: The Node.js/Express application and Python FastAPI backend are separate execution targets. They should not be assumed to run as one integrated backend without additional configuration.
+
+---
+
+## 🔐 Role-Based Access Control (RBAC)
+
+WorkOrbit supports three workspace roles:
+
+| Permission | Owner | Admin | Member |
+|---|:---:|:---:|:---:|
+| Delete Workspace | ✅ | ❌ | ❌ |
+| Edit Workspace Settings | ✅ | ✅ | ❌ |
+| Invite Members | ✅ | ✅ | ❌ |
+| Transfer Ownership | ✅ | ❌ | ❌ |
+| Change Member Roles | ✅ | ✅* | ❌ |
+| Create / Edit Projects | ✅ | ✅ | ❌ |
+| Create & Move Tasks | ✅ | ✅ | ✅ |
+| Comment on Tasks | ✅ | ✅ | ✅ |
+
+*Admins can change Member roles according to the project permission model.*
+
+---
+
+## 💻 Getting Started
+
+### Prerequisites
+
+For the Python backend:
+
+- Python
+- Windows PowerShell (commands below)
+- Git
+
+For the Node.js application:
+
+- Node.js
+- npm
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
 ```
 
-### 2. Install Python Dependencies
+Navigate to the project directory:
+
+```bash
+cd WorkOrbit
+```
+
+### 2. Create a Python Virtual Environment
+
+```powershell
+python -m venv .venv
+```
+
+Activate it:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install Python Dependencies
+
 ```powershell
 pip install -r requirements.txt
 ```
 
-### 3. Initialize Environment Variables
+### 4. Configure Environment Variables
+
+If `.env.example` is available:
+
 ```powershell
 Copy-Item .env.example .env
 ```
 
-### 4. Run Database Migrations
+Update the `.env` file with your local configuration.
+
+Never upload actual API keys, passwords, or secrets to GitHub.
+
+### 5. Run Database Migrations
+
 ```powershell
 alembic upgrade head
 ```
 
-### 5. Launch the FastAPI Uvicorn Server
+### 6. Start the FastAPI Backend
+
 ```powershell
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-API Documentation will be live at: `http://127.0.0.1:8000/docs`
+
+The API documentation will be available at:
+
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
 
 ---
 
-## 🧪 Running Automated Tests
+## 🌐 Running the Node.js / React Application
 
-Run the test suite with `pytest`:
+The live application is documented as running in the AI Studio environment on port `3000`.
+
+For local development, inspect the frontend `package.json` first.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Check available scripts:
+
+```bash
+npm run
+```
+
+Run the appropriate development script listed in `package.json`.
+
+The exact local startup command and environment configuration depend on the repository setup.
+
+---
+
+## 🧪 Automated Testing
+
+The Python backend includes a Pytest test suite.
+
+Run tests using:
 
 ```powershell
 pytest tests/ -v
 ```
 
-Tests verify:
-- ✅ Successful user signup and token generation
-- ✅ Duplicate email rejection
-- ✅ Invalid password rejection
-- ✅ Workspace isolation and membership permissions
-- ✅ Project creation and real-time task progress recalculation
-- ✅ Kanban status updates (`PATCH /api/tasks/{id}/status`)
-- ✅ Service health check (`GET /api/health`)
+### Documented Test Coverage
+
+- User Signup and Token Generation
+- Duplicate Email Rejection
+- Invalid Password Rejection
+- Workspace Isolation
+- Membership Permissions
+- Project Creation
+- Task Progress Recalculation
+- Kanban Status Updates
+- API Health Check
+
+Example API endpoints:
+
+```http
+PATCH /api/tasks/{id}/status
+GET /api/health
+```
+
+> Run the test suite locally to verify the current test results.
 
 ---
 
-## 🔑 Default Test Accounts (RBAC Personas)
+## 👥 Demo Accounts
 
-Use the built-in 1-click switcher or credentials:
-- **Alex Mercer (Workspace Owner)**: `alex@workorbit.io` / `password123`
-- **Elena Rostova (Workspace Admin)**: `elena@workorbit.io` / `password123`
-- **Jordan Chen (Workspace Member)**: `jordan@workorbit.io` / `password123`
+The project description includes a one-click demo account switcher with three workspace personas:
+
+| User | Role |
+|---|---|
+| Alex Mercer | Workspace Owner |
+| Elena Rostova | Workspace Admin |
+| Jordan Chen | Workspace Member |
+
+These accounts are intended for local development and demonstration only.
+
+Do not use demo credentials in production or publish reusable passwords in a public repository.
 
 ---
 
-## 📋 Role-Based Access Control (RBAC) Matrix
+## 🔒 Security Considerations
 
-| Permission | Owner | Admin | Member |
-|---|---|---|---|
-| Delete Workspace | ✅ Yes | ❌ No | ❌ No |
-| Edit Workspace Settings | ✅ Yes | ✅ Yes | ❌ No |
-| Invite Members (Email / Link) | ✅ Yes | ✅ Yes | ❌ No |
-| Transfer Ownership | ✅ Yes | ❌ No | ❌ No |
-| Change Member Roles | ✅ Yes | ✅ Yes (Members only) | ❌ No |
-| Create / Edit Projects | ✅ Yes | ✅ Yes | ❌ No |
-| Create & Move Tasks | ✅ Yes | ✅ Yes | ✅ Yes |
-| Comment on Tasks | ✅ Yes | ✅ Yes | ✅ Yes |
+- Keep environment variables and API keys private.
+- Never commit `.env` files.
+- Use strong JWT signing secrets.
+- Validate user permissions on the backend.
+- Protect sensitive workspace and project data.
+- Use HTTPS in production deployments.
+- Do not use development credentials in production.
+
+---
+
+## 📁 Project Structure
+
+The documented Python backend structure:
+
+```text
+WorkOrbit/
+│
+├── app/
+│   └── Python FastAPI Backend
+│
+├── tests/
+│   └── Automated Tests
+│
+├── requirements.txt
+├── .env.example
+├── alembic.ini
+├── README.md
+└── .gitignore
+```
+
+The complete frontend and backend folder structure may contain additional directories depending on the checked-in implementation.
+
+---
+
+## 🚀 Future Improvements
+
+- Enhanced Dashboard Analytics
+- Advanced Task Management
+- Real-Time Team Collaboration
+- Improved Notification System
+- Extended API Documentation
+- Cloud Deployment
+- Additional Automated Tests
+- Mobile-Friendly Experience
+
+---
+
+## 📌 Project Status
+
+**WorkOrbit is currently under active development.**
+
+The project focuses on building a practical collaboration platform with workspace management, project tracking, team permissions, and task management capabilities.
+
+---
+
+## 👨‍💻 Author
+
+**Yash Kumar Srivastava**
+
+BCA (IBM) Student | Aspiring App Developer
+
+- GitHub: https://github.com/YashKrSriva
+- LinkedIn: https://www.linkedin.com/in/yash-kumar-srivastava-b77897311
+
+---
+
+## 📄 License
+
+No open-source license has been specified yet.
+
+A LICENSE file should be added before granting others permission to use, modify, or distribute this project.
